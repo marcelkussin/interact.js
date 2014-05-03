@@ -15,7 +15,7 @@
         SVGElementInstance = window.SVGElementInstance || blank,
         HTMLElement        = window.HTMLElement        || window.Element,
 
-        PointerEvent = window.PointerEvent || window.MSPointerEvent,
+        PointerEvent = (window.navigator.pointerEnabled) ? (window.PointerEvent || window.MSPointerEvent) : false,
         GestureEvent = window.GestureEvent || window.MSGestureEvent,
         Gesture      = window.Gesture      || window.MSGesture,
 
@@ -4435,7 +4435,6 @@
 
         return this;
     };
-
     if (PointerEvent) {
         events.add(docTarget, 'pointerup', collectTaps);
 
@@ -4456,7 +4455,7 @@
                 pointerIsDown = false;
             }
         });
-
+        
         selectorGesture = new Gesture();
         selectorGesture.target = document.documentElement;
     }
