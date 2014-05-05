@@ -15,7 +15,7 @@
         SVGElementInstance = window.SVGElementInstance || blank,
         HTMLElement        = window.HTMLElement        || window.Element,
 
-        PointerEvent = (window.navigator.pointerEnabled) ? (window.PointerEvent || window.MSPointerEvent) : false,
+        PointerEvent = false,
         GestureEvent = window.GestureEvent || window.MSGestureEvent,
         Gesture      = window.Gesture      || window.MSGesture,
 
